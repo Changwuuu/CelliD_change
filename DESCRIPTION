@@ -10,7 +10,8 @@ Description: CelliD is a clustering-free multivariate statistical method for the
 Depends:
     R (>= 4.1),
     Seurat (>= 4.0.1),
-    SingleCellExperiment
+    SingleCellExperiment,
+    Matrix
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
