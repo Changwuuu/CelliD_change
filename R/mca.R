@@ -110,6 +110,9 @@ RunMCA.Seurat <- function(X, nmcs = 50, features = NULL, reduction.name = "mca",
     InitAssay <- DefaultAssay(X)
     DefaultAssay(X) <- assay
     data_matrix <- as.matrix(GetAssayData(X, slot = slot))
+    
+    data_matrix <- Matrix(data = data_matrix, sparse = TRUE)
+    
     MCA <- RunMCA(X = data_matrix, nmcs = nmcs, features = features)
     geneEmb <- MCA$featuresCoordinates
     cellEmb <- MCA$cellsCoordinates
