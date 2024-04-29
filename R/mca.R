@@ -68,7 +68,7 @@ RunMCA.matrix <- function(X, nmcs = 50, features = NULL, reduction.name = "MCA",
     return(MCA)
 }
 
-' @rdname RunMCA
+#' @rdname RunMCA
 #' @export
 RunMCA.dgCMatrix <- function(X, nmcs = 50, features = NULL, reduction.name = "MCA", ...) {
     # preprocessing matrix
