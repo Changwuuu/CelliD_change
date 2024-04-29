@@ -47,11 +47,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-
+// SparseMCAStep1
+List SparseMCAStep1(arma::sp_mat X);
+RcppExport SEXP _CelliD_SparseMCAStep1(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::sp_mat >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(SparseMCAStep1(X));
+    return rcpp_result_gen;
+END_RCPP
+}
 static const R_CallMethodDef CallEntries[] = {
     {"_CelliD_fastPDist", (DL_FUNC) &_CelliD_fastPDist, 2},
     {"_CelliD_MCAStep1", (DL_FUNC) &_CelliD_MCAStep1, 1},
     {"_CelliD_MCAStep2", (DL_FUNC) &_CelliD_MCAStep2, 3},
+    {"_CelliD_SparseMCAStep1", (DL_FUNC) &_CelliD_SparseMCAStep1, 1},
     {NULL, NULL, 0}
 };
 
